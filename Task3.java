@@ -14,6 +14,9 @@
 public class Task3 {
     static void fuzzySearch(String pattern, String line)
     {
+        if (pattern == null || line == null)
+            return;
+
         int patternLength = pattern.length(), lineLength = line.length();
         int patternIndex = 0, lineIndex = 0;
 
@@ -34,5 +37,6 @@ public class Task3 {
         fuzzySearch("cartwheel", "cartwheel"); // true
         fuzzySearch("cwheeel", "cartwheel"); // false
         fuzzySearch("lw", "cartwheel"); // false
+        fuzzySearch(null, null);
     }
 }
